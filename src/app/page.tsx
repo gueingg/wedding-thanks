@@ -1,103 +1,52 @@
-import Image from "next/image";
+"use client";
+
+import "./globals.css";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#f8f0e3]">
+      {/* 배경 이미지 wrapper + 콘텐츠 박스 */}
+      <div className="relative flex flex-col items-center justify-center w-full max-w-3xl px-4 mx-auto">
+        <img
+          src="/bg.png"
+          alt="배경"
+          className="w-full h-auto object-contain absolute inset-0 z-0 select-none pointer-events-none max-h-screen"
+          aria-hidden="true"
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative z-10 w-full backdrop-blur-sm rounded-lg text-center shadow-xl overflow-hidden">
+          <img
+            src="/photo.png"
+            alt="결혼사진"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-contain object-center opacity-30 z-0"
+            aria-hidden="true"
+          />
+          <div className="relative z-10 text-center text-[#111111] leading-loose text-base sm:text-lg md:text-xl px-2 sm:px-6 md:px-10">
+            <h1>
+              <p>와주셔서 감사합니다.</p>
+            </h1>
+            <p>
+              현규와 유진의 결혼에 따뜻한 마음을 전해주셔서
+              <br />
+              진심으로 감사드립니다.
+            </p>
+            <p className="mt-4">
+              여러분의 축복 속에서
+              <br />
+              저희는 서로의 반쪽이 되어
+              <br />한 걸음, 한 걸음 함께 나아가려 합니다.
+            </p>
+            <p className="mt-4">
+              소중한 자리에 함께해 주신 마음
+              <br />
+              오래도록 간직하겠습니다.
+            </p>
+            <p className="mt-4">감사합니다.</p>
+          </div>
+          <p className="relative z-10 mb-6 font-[var(--font-nanum-myeongjo)]">
+            앞으로도 서로를 아끼며 잘 살겠습니다. 고맙습니다 💕
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 }

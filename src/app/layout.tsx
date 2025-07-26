@@ -1,6 +1,29 @@
+// SUIT (웹폰트 직접 import)
+import localFont from "next/font/local";
+const suit = localFont({
+  src: [
+    {
+      path: "../../public/fonts/SUIT-Variable.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-suit",
+  display: "swap",
+});
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+// Nanum Myeongjo (2번 추천)
+import { Nanum_Myeongjo } from "next/font/google";
+const nanumMyeongjo = Nanum_Myeongjo({
+  weight: ["400", "700"],
+  subsets: ["latin", "korean"],
+  variable: "--font-nanum-myeongjo",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +46,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko" className={`${suit.variable} ${nanumMyeongjo.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          fontFamily:
+            "SUIT, Nanum Myeongjo, var(--font-suit), var(--font-geist-sans), var(--font-nanum-myeongjo), serif",
+        }}
       >
         {children}
       </body>
