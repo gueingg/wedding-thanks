@@ -41,6 +41,7 @@ export default function Home() {
               오래도록 간직하겠습니다.
             </p>
             <p className="mt-4">감사합니다.</p>
+            <p className="mt-4"></p>
           </div>
           <p className="relative z-10 mb-6 font-[var(--font-nanum-myeongjo)]">
             앞으로도 서로를 아끼며 잘 살겠습니다. 고맙습니다 💕
